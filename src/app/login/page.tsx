@@ -15,16 +15,9 @@ import {
 import "./page.module.css";
 
 const { Text, Link, Title } = Typography;
+import { useRouter } from "next/navigation";
 
 const background = "assets/img/login-bg.png";
-
-const onFinish = (values: any) => {
-  console.log("Success:", values);
-};
-
-const onFinishFailed = (errorInfo: any) => {
-  console.log("Failed:", errorInfo);
-};
 
 type FieldType = {
   username?: string;
@@ -33,6 +26,20 @@ type FieldType = {
 };
 
 export default function LoginPage() {
+  const router = useRouter();
+
+  const onFinish = (values: any) => {
+    const { username, password } = values;
+    if (username === "admin" || password === "admin") {
+      router.push("/home", { scroll: false });
+    }
+    console.log("Success:", values);
+  };
+
+  const onFinishFailed = (errorInfo: any) => {
+    console.log("Failed:", errorInfo);
+  };
+
   return (
     <ConfigProvider theme={theme}>
       <Layout
