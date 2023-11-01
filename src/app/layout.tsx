@@ -2,6 +2,7 @@ import StyledComponentsRegistry from "@/lib/AntdRegistry";
 import "./globals.css";
 import type { Metadata } from "next";
 import { Open_Sans } from "next/font/google";
+import { Providers } from "@/lib/providers";
 
 const font = Open_Sans({ subsets: ["latin"] });
 
@@ -16,10 +17,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body className={font.className}>
-        <StyledComponentsRegistry>{children}</StyledComponentsRegistry>
-      </body>
-    </html>
+    <Providers>
+      <html lang="en">
+        <body className={font.className}>
+          <StyledComponentsRegistry>{children}</StyledComponentsRegistry>
+        </body>
+      </html>
+    </Providers>
   );
 }
