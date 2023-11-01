@@ -8,7 +8,9 @@
     "prod": "npx cross-env NODE_ENV=production next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "clean": "rm -rf node_modules && yarn"
+
   },
   "dependencies": {
     "@ant-design/cssinjs": "^1.17.0",
@@ -18,7 +20,7 @@
     "cross-env": "^7.0.3",
     "dotenv": "^16.3.1",
     "lodash": "^4.17.21",
-    "next": "^14.0.1",
+    "next": "latest",
     "react": "latest",
     "react-dom": "latest",
     "react-redux": "^8.1.3",
