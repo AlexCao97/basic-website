@@ -10,10 +10,10 @@
     "start": "next start",
     "lint": "next lint",
     "clean": "rm -rf node_modules && yarn"
-
   },
   "dependencies": {
     "@ant-design/cssinjs": "^1.17.0",
+    "@ant-design/nextjs-registry": "^1.0.0",
     "@reduxjs/toolkit": "^1.9.7",
     "antd": "5.9.4",
     "axios": "^1.6.0",
